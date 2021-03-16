@@ -7,13 +7,15 @@ using namespace std;
 void generarMatriz(int altura, int anchura) {
     srand(time(NULL));
     string numbers[altura][anchura];
-
+	
+	//Inicializa la matriz
     for(int i=0; i<altura; i++) {
         for(int j=0; j<anchura; j++) {
             numbers[i][j] = " ";
         }
     }
-
+	
+	//Genera la curva
     int randomInicio = 1 + rand()% ((anchura-1)-1+1); 
     int random = 0;
     int i=0;
@@ -24,13 +26,31 @@ void generarMatriz(int altura, int anchura) {
             if(random>=0 && random<anchura){
                 numbers[i][random] = "C";
             } else {
-                cout << "else" << endl;
                 i--;
             }
         }
     }
+    
+    //Genera las rectas
+    for(int i=0; i<altura-1; i++) {
+	    for(int j=0; j<anchura; j++) {
+	        if((numbers[i][j]=="C")&&((i%2)==0)){
+	        	if((numbers[i+1][j-1]!="C")&&(i+1<altura)&&(j-1>=0)){
+	        		numbers[i+1][j-1]="X";
+				}
+				else{
+					continue;
+				}
+			}
+			else{
+				continue;
+			}
+	    }
+    }
+    
+    
 
-    //  Printing array elements
+    //Imprime la matriz
     for (int i = 0; i < altura; ++i) {
         for (int j = 0; j < anchura; ++j) {
             cout << numbers[i][j] << " ";
