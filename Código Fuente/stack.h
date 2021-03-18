@@ -18,7 +18,7 @@ class Stack : public List<T> {
 
 		void pop(){
             T removed = this->removeFirstElement();
-			cout << removed.getName() << endl;
+			//cout << removed.getName() << endl;
 		}
 };
 

@@ -1,7 +1,8 @@
-
 #include <iostream>
 #include<stdlib.h>
 #include <time.h>
+#include "stack.h"
+#include "point.h"
 
 using namespace std;
 
@@ -18,25 +19,30 @@ int divisor(int number){
 void generatePattern(int pDimensionX, int pDimensionY ){
 	
 	srand(time(NULL));
-	
-	int qtyAreas = divisor(pDimensionX);
-	int origin[2] = {0,rand()%pDimensionY+1};
+	Stack<Point> stack;
+	List<Point> keyPoints;
+
+	int qtyAreas = pDimensionX/divisor(pDimensionX);  
 	int qtyPoints = (qtyAreas/2)+1;
-	int matrixPoints[qtyPoints][2];
-	matrixPoints[0][0] = origin[0];
-	matrixPoints[0][1] = origin[1];
-	int distance = pDimensionX/qtyAreas;
+	Point origin = Point(0,rand()%pDimensionY+1);
+	keyPoints.addToEnd(origin);               
+	int distance = (pDimensionX/qtyAreas)*2;           
 	for(int i = 1;i<qtyPoints;i++){
-		matrixPoints[i][0] = distance;
-		matrixPoints[i][1] = 0;
-		distance+=distance*2;
+		Point keypoint = Point(distance,rand()%pDimensionY+1);    
+		keyPoints.addToEnd(keypoint);
+		distance=distance*2;               
 	} 
 
+	int qtyLines = 5+rand()%(15+1-5);
+	for(int i=0; i<qtyLines; i++) { 
+		Point addingPoint = Point(rand()%pDimensionX+1, rand()%pDimensionY+1);
+		stack.push(addingPoint);
+	}
+	
 	
 }
 
 int main(){
-	generatePattern(20,20);
-	
+	generatePattern(50,50);
 	return 0;
 }
