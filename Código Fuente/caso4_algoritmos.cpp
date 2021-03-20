@@ -1,10 +1,10 @@
 /*
-Instituto Tecnológico de Costa Rica
-Escuela de Computación
-Análisis de Algortimos
-Profesor: Rodrigo Núñez Núñez
+Instituto TecnolÃ³gico de Costa Rica
+Escuela de ComputaciÃ³n
+AnÃ¡lisis de Algortimos
+Profesor: Rodrigo NÃºÃ±ez NÃºÃ±ez
 Estudiantes: 
-Luis Carlos Araya Mata Carné: 2020205005
+Luis Carlos Araya Mata CarnÃ©: 2020205005
 Kendall Cascante Mesen Carne: 2019039628
 ------
 Grupo: 1
@@ -106,6 +106,12 @@ void generatePattern(int pDimensionX, int pDimensionY ){
 
 
 int main(){
+	/*
+	Para generar el patron solamente llame a la funcion generatePattern con sus dimensiones respectivamente. 
+	*/
 	generatePattern(50,50);
+	generatePattern(100,100);
+	
+	
 	return 0;
 }
