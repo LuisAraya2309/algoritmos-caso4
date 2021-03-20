@@ -4,4 +4,6 @@ El objetivo del algoritmo es generar el patron numero 12 del caso. El n de nuest
 //f(n) = 27 + 74n
 // O(n)
 
+Para generar el patron solamente llame a la funcion generatePattern con sus dimensiones respectivamente. 
+
 
