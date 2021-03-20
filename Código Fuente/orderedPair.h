@@ -1,5 +1,5 @@
-#ifndef _point_
-#define _point_
+#ifndef _orderedPair_
+#define _orderedPair_
 
 
 
@@ -7,11 +7,11 @@
 
 using namespace std;
 
-struct Point{
+struct orderedPair{
     int x;
     int y;
     
-    Point(int pX,int pY){
+    orderedPair(int pX,int pY){
         x = pX;
         y = pY;
     }
